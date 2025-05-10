@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import here Iconscount CDN link for icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+   <link rel="stylesheet" href="styles.css">
+   <title>Sole Sync store</title>
+</head>
+<body> 
+    <div class="container">
+        <nav class="reveal">
+            <a href="" id="logo"> <img src="images/ChatGPT Image Apr 22, 2025, 02_09_17 AM.png" alt="logo"></a>
+            <ul>
+                <li><a href="new&Featured.html">New & Featured</a></li>
+                <li><a href="man.html">Man</a></li>
+                <li><a href="women.html">Woman</a></li>
+                <li><a href="kids.html">Kids</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+            </ul>
+            <div class="buying">
+                <i class="uil uil-search"></i>
+                <i class="uil uil-heart"></i>  
+                <i class="uil uil-shopping-bag"></i>
+
+            </div>  
+        </nav>
+        <div class="wrapper">
+            <div class="cols">
+                <div class="text-data">
+                    <h1 class="title left">Nike X Runner</h1>
+                    <h2 class="label left">New & Featured </h2>
+                    <p class="description">The Nike X Runner is a stylish and comfortable shoe designed for life on the go,these sneakers are perfect for running errands or hitting the gym.Plus elements of the upper are blended into a strong and flexible cage that wraps the shoe to add a ruggedness to your everyday commute.</p><br>
+                    <div class="price left">
+                        <span>$120.00</span><br>
+                        <button><i class="uis uis-bolt-alt"></i>Buy Now</button>
+                        <button class="btn"><i class="uil uil-shopping-bag"></i> add to Cart</button>
+                
+    
+                    </div>  
+            
+                    
+                </div>
+            </div>
+
+
+            <div class="cols image-cols">
+                <div class="imagebox scale">
+                    <img src="images/sneakers-5578127_1280-removebg-preview.png" alt="Nike X Runner" class="image active">
+                    <img src="images/istockphoto-472046671-612x612-removebg-preview.png" alt="nike predator" class="image">
+                    <img src="images/luis-felipe-lins-J2-wAQDckus-unsplash-removebg-preview.png" alt="X factor" class="image">
+                </div>
+                <span class="element right"></span>
+                </div>
+            </div>
+            <div class="thumbnails raiseup">
+                <span class="raiseup"><img src="images/sneakers-5578127_1280-removebg-preview.png" alt=""></span>
+                <span class="raiseup"><img src="images/istockphoto-472046671-612x612-removebg-preview.png" alt=""></span>
+            <span class="raiseup"><img src="images/luis-felipe-lins-J2-wAQDckus-unsplash-removebg-preview.png" alt=""></span>
+            </div>
+            <div class ="socialinks scale">
+                <i class="uil uil-facebook"></i>
+                <i class="uil uil-instagram"></i>
+                <i class="uil uil-twitter"></i>
+
+            
+            </div>  
+             
+
+    </div>
+
+<!-- now start js code -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+   const thumbImage = document.querySelectorAll('.thumbnails span');
+   const images = document.querySelectorAll('.imagebox .image');
+   const title = document.querySelector('.title');
+   const label = document.querySelector('.label');
+   const desc = document.querySelector('.description');
+   const price = document.querySelector('.price span');
+
+   thumbImage[0].addEventListener('click',()=>{
+       images[0].classList.add('active');
+       images[1].classList.remove('active');
+       images[2].classList.remove('active');
+       title.innerText = "Air Jordan 4RM";
+       label.innerText = "Women's Shoes";
+       price.innerText = "$120.00";
+       desc.innerText = "The remix you didn't know you needed. Made for life on the go, these sneakers reimagine the AJ4 with comfort and durability in mind. Max Air cushions your every step. Plus, elements of the upper are blended into a strong, flexible cage that wraps the shoe to add a ruggedness to your everyday commute.";
+       document.body.classList.add('activeRoot');
+       document.body.classList.remove('activeRoot1','activeRoot2');
+   });
+   thumbImage[1].addEventListener('click',()=>{
+       images[1].classList.add('active');
+       images[0].classList.remove('active');
+       images[2].classList.remove('active');
+       title.innerText = "Nike JAM";
+       label.innerText = "Men's Shoes";
+       price.innerText = "$155.00";
+       desc.innerText = "Bring your body, mind and soul with JAM—Nike's first shoe created for breakers on the world stage. We obsessed over every detail from top to bottom so you can throw down in a cypher with confidence. It features a flexible and durable upper that moves with you, while textured hand grips on the midsole make it easier to grab your shoe when you're up in the air. And for a little something extra, the flipped logo is right side up when you're upside down during freeze poses.";
+       document.body.classList.add('activeRoot1');
+       document.body.classList.remove('activeRoot','activeRoot2');
+   });
+   thumbImage[2].addEventListener('click',()=>{
+       images[2].classList.add('active');
+       images[1].classList.remove('active');
+       images[0].classList.remove('active');
+       title.innerText = "Sabrina 2 EP";
+       label.innerText = "Basketball Shoes";
+       price.innerText = "$88.00";
+       desc.innerText = "Sabrina Ionescu's success is no secret. Her game is based on living in the gym, getting in rep after rep to perfect her craft. The Sabrina 2 sets you up to do more, so you're ready to go when it's game time. Our newest Cushlon foam helps keep you fresh, Air Zoom cushioning adds the pop and sticky traction helps you create that next-level distance. Sabrina's handed you the tools. Time to go to work. With its extra-durable rubber outsole, this version gives you traction for outdoor courts.";
+       document.body.classList.add('activeRoot2');
+       document.body.classList.remove('activeRoot','activeRoot1');
+   });
+
+   // now add reveal effects on load
+   ScrollReveal().reveal('.reveal',
+   {
+       interval: 300,
+       origin: 'top',
+       distance: "100px",
+       scale: 0.85,
+       delay: 200
+   });
+   ScrollReveal().reveal('.left',
+   {
+       interval: 100,
+       origin: 'left',
+       distance: "100px",
+       scale: 0.85,
+       delay: 600
+   });
+   ScrollReveal().reveal('.right',
+   {
+       origin: 'right',
+       distance: "200px",
+       delay: 1200
+   });
+   ScrollReveal().reveal('.scale',
+   {
+       scale: 0.4,
+       delay: 1500
+   });
+   ScrollReveal().reveal('.raiseup',
+   {
+       interval: 100,
+       origin: 'bottom',
+       distance: "100px",
+       scale: 0.85,
+       delay: 1800
+   });
+
+</script>
+
+ 
+  ``````````````````
+
+</body>
+
+</html>     

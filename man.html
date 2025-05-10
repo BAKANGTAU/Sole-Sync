@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import here Iconscount CDN link for icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+   <link rel="stylesheet" href="styles.css">
+   <title>Sole Sync store</title>
+</head>
+<body>  <div class="container">
+        <nav class="reveal">
+            <a href="" id="logo"> <img src="images/ChatGPT Image Apr 22, 2025, 02_09_17 AM.png" alt="logo"></a>
+            <ul>
+                <li><a href="index.html">New & Featured</a></li>
+                <li><a href="man.html">Man</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="kids.html">Kids</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+            </ul>
+            <div class="buying">
+                <i class="uil uil-search"></i>
+                <i class="uil uil-heart"></i>  
+                <i class="uil uil-shopping-bag"></i>
+
+            </div>  
+        </nav>
+        <div class="wrapper">
+            <div class="cols">
+                <div class="text-data">
+                    <h1 class="title left">- Nike New Balance 574</h1>
+                    <h2 class="label left">Men </h2>
+                    <p class="description"> A versatile sneaker that blends style and comfort for everyday wear.</p><br>
+                    <div class="price left">
+                        <span>$120.00</span><br>
+                        <button><i class="uis uis-bolt-alt"></i>Buy Now</button>
+                        <button class="btn"><i class="uil uil-shopping-bag"></i> add to Cart</button>
+                
+    
+                    </div>  
+            
+                    
+                </div>
+            </div>
+
+
+            <div class="cols image-cols">
+                <div class="imagebox scale">
+                    <img src="images/robin-davidson-oDnPch2Fu1U-unsplash__1_-removebg-preview.png" alt="Nike New Balance 574" class="image active">
+                    <img src="images/istockphoto-472046671-612x612-removebg-preview.png" alt="nike predator" class="image">
+                    <img src="images/th-removebg-preview.png" alt="- Nike Air Force 1 " class="image">
+                </div>
+                <span class="element right"></span>
+                </div>
+            </div>
+            <div class="thumbnails raiseup">
+                <span class="raiseup"><img src="images/robin-davidson-oDnPch2Fu1U-unsplash__1_-removebg-preview.png" alt=""></span>
+                <span class="raiseup"><img src="images/istockphoto-472046671-612x612-removebg-preview.png" alt=""></span>
+            <span class="raiseup"><img src="images/th-removebg-preview.png" alt=""></span>
+            </div>
+            <div class ="socialinks scale">
+                <i class="uil uil-facebook"></i>
+                <i class="uil uil-instagram"></i>
+                <i class="uil uil-twitter"></i>
+
+            </div>  
+             
+
+    </div>
+
+<!-- now start js code -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+   const thumbImage = document.querySelectorAll('.thumbnails span');
+   const images = document.querySelectorAll('.imagebox .image');
+   const title = document.querySelector('.title');
+   const label = document.querySelector('.label');
+   const desc = document.querySelector('.description');
+   const price = document.querySelector('.price span');
+
+   thumbImage[0].addEventListener('click',()=>{
+       images[0].classList.add('active');
+       images[1].classList.remove('active');
+       images[2].classList.remove('active');
+       title.innerText = "Nike New Balance 574";
+       label.innerText = "Men";
+       price.innerText = "$120.00";
+       desc.style.color = "#fff"; // White color
+       desc.innerText = "A versatile sneaker that blends style and comfort for everyday wear.";
+       document.body.classList.add('activeRoot');
+       document.body.classList.remove('activeRoot1','activeRoot2');
+   });
+   thumbImage[1].addEventListener('click',()=>{
+       images[1].classList.add('active');
+       images[0].classList.remove('active');
+       images[2].classList.remove('active');
+       title.innerText = "Nike JAM";
+       title.style.color = "#fff"; // Add this line
+       label.innerText = "Men's Shoes";
+       price.innerText = "$155.00";
+       desc.innerText = "Bring your body, mind and soul with JAM—Nike's first shoe created for breakers on the world stage. We obsessed over every detail from top to bottom so you can throw down in a cypher with confidence. It features a flexible and durable upper that moves with you, while textured hand grips on the midsole make it easier to grab your shoe when you're up in the air. And for a little something extra, the flipped logo is right side up when you're upside down during freeze poses.";
+       desc.style.color = "#f1a92c"; // Orange color
+       document.body.classList.add('activeRoot1');
+       document.body.classList.remove('activeRoot','activeRoot2');
+   });
+   thumbImage[2].addEventListener('click',()=>{
+       images[2].classList.add('active');
+       images[1].classList.remove('active');
+       images[0].classList.remove('active');
+       title.innerText = "Nike Air Force 1";
+       label.innerText = "Men Shoes";
+       price.innerText = "$200.00";
+        desc.style.color = "#ecac9a"; // Pink color
+       desc.innerText = " A timeless classic with a bold design, suitable for casual and streetwear fashion.";
+       document.body.classList.add('activeRoot2');
+       document.body.classList.remove('activeRoot','activeRoot1');
+   });
+
+   // now add reveal effects on load
+   ScrollReveal().reveal('.reveal',
+   {
+       interval: 300,
+       origin: 'top',
+       distance: "100px",
+       scale: 0.85,
+       delay: 200
+   });
+   ScrollReveal().reveal('.left',
+   {
+       interval: 100,
+       origin: 'left',
+       distance: "100px",
+       scale: 0.85,
+       delay: 600
+   });
+   ScrollReveal().reveal('.right',
+   {
+       origin: 'right',
+       distance: "200px",
+       delay: 1200
+   });
+   ScrollReveal().reveal('.scale',
+   {
+       scale: 0.4,
+       delay: 1500
+   });
+   ScrollReveal().reveal('.raiseup',
+   {
+       interval: 100,
+       origin: 'bottom',
+       distance: "100px",
+       scale: 0.85,
+       delay: 1800
+   });
+
+</script>
+
+ 
+  ``````````````````
+
+</body>
+
+</html>     

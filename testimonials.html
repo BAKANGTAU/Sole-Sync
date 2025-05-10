@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sole Sync - Testimonials</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="reveal">
+            <a href="#" id="logo">
+                <img src="images/ChatGPT Image Apr 22, 2025, 02_09_17 AM.png" alt="Sole Sync logo">
+            </a>
+            <ul>
+                <li><a href="index.html">New & Featured</a></li>
+                <li><a href="man.html">Man</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="kids.html">Kids</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+            </ul>
+            <div class="buying">
+                <i class="uil uil-search"></i>
+                <i class="uil uil-heart"></i>  
+                <i class="uil uil-shopping-bag"></i>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="testimonials-container">
+            <!-- Feedback Section -->
+            <section class="feedback-section">
+                <h2 class="section-title">Share Your Experience</h2>
+                
+                <form id="feedbackForm" class="feedback-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rating:</label>
+                        <div class="rating-stars">
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5">★</label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4">★</label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3">★</label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2">★</label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1">★</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Feedback</button>
+                </form>
+            </section>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="#"><i class="uil uil-facebook"></i></a>
+                <a href="#"><i class="uil uil-instagram"></i></a>
+                <a href="#"><i class="uil uil-twitter"></i></a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        // Scroll Reveal Initialization
+        ScrollReveal().reveal('.reveal', {
+            interval: 300,
+            origin: 'top',
+            distance: "100px",
+            scale: 0.85,
+            delay: 200
+        });
+
+        // Feedback Form Handling
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                rating: document.querySelector('input[name="rating"]:checked')?.value,
+                message: document.getElementById('message').value
+            };
+
+            // Here you would typically send the data to a server
+            console.log('Feedback submitted:', formData);
+            
+            // Show success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message';
+            successMessage.textContent = 'Thank you for your feedback! We will contact you shortly.';
+            document.body.appendChild(successMessage);
+
+            // Remove message after 3 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 3000);
+
+            this.reset();
+        });
+    </script>
+</body>
+</html>
